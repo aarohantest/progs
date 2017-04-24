@@ -1,0 +1,19 @@
+Step 1 - 
+*Open New Terminal*
+$cd Desktop
+$rpcgen -a -C fact.x
+
+-----------------------------
+Step 2 -
+*Open New Terminal*
+$cd Desktop
+//make changes in fact_client and fact_server files
+$make -f Makefile.fact
+$./fact_server
+
+------------------------------
+Step 3 -
+*Open New Terminal*
+$cd Desktop
+$ sudo ./fact_client
+$./fact_client localhost
