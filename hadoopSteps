@@ -1,0 +1,41 @@
+1> First open eclipse. Start a new java project.
+
+2> Add external jars from the following:
+	/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.8.0.jar
+	/usr/local/hadoop/share/hadoop/common/hadoop-common-2.8.0.jar
+
+3> Create new class and write program. Make sure that it is not in any package. and all inner classes 	  are static.
+
+4> Export the project as a jar and save it on desktop.
+
+5> Open terminal.
+
+6> su hduser
+   password: hadoop
+
+7> start-dfs.sh
+   start-yarn.sh
+   check if all 6 services have started using jps
+
+8> hadoop fs -mkdir <dir_name> : to create a directory on HDFS
+
+9> Create a folder on desktop with name inputfile
+   create an input file inside that folder.
+
+10> hadoop fs -put 'path to folder on the desktop that contains the input file' /
+    this copies the entire folder on the desktop in HDFS root
+
+11> cd /usr/local/hadoop
+    change directory to hadoop
+
+12> bin/hadoop jar <path to jar file> <class_name> /inputfile/input /myOutput
+    /home/gaurav/Desktop/WordCount.jar
+    WordCount <=: main class
+    /myOutput <= directory in hdfs where output will be stored
+
+13> you can check the directories being crated and stuff by going to
+    http://localhost:50070 <= HDFS browser
+    then to to utilities and browse file system
+    
+    Yarn resource manager at http://localhost:8088
+    
